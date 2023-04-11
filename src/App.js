@@ -37,8 +37,8 @@ function App() {
   const login = async () => {
     try {
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-      setRegisterEmail('');
-      setRegisterPassword('');
+      setLoginEmail('');
+      setLoginPassword('');
       console.log(user);
     } catch (error) {
       console.log(error.message);
@@ -83,11 +83,13 @@ function App() {
         <input
           type="email"
           placeholder='Email...'
+          value={loginEmail}
           onChange={(e) => setLoginEmail(e.target.value)}
         />
         <input
           type="password"
           placeholder='Password...'
+          value={loginPassword}
           onChange={(e) => setLoginPassword(e.target.value)}
         />
         <button onClick={login}>Login</button>

@@ -20,7 +20,6 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log(currentUser.displayName);
     });
   }, []);
 
